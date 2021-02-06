@@ -111,6 +111,20 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '3.5')
   });
 
+  it('the output as expected for a range of numbers (large numbers)', () => {
+    cy.get('#number5').click();
+    cy.get('#number5').click();
+    cy.get('#number5').click();
+    cy.get('#number5').click();
+    cy.get('#number5').click();
+    cy.get('#number5').click();
+    cy.get('#number5').click();
+    cy.get('#operator_multiply').click();
+    cy.get('#number5').click();
+    cy.get('#operator_equals').click();
+    cy.get('.display').should('contain', '27777775')
+  });
+
   //5.
   it('should give an error if divided by zero', () => {
     cy.get('#number7').click();
